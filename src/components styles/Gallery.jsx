@@ -17,11 +17,9 @@ function Gallery({ tours, setTours, onRemove }) {
       setLoading(false);
     }
   };
-
   useEffect(() => {
     fetchTours();
   }, []);
-
   if (loading) return <h2>Loading...</h2>;
   if (error) return <h2>Something went wrong...</h2>;
   if (tours.length === 0)
@@ -31,7 +29,6 @@ function Gallery({ tours, setTours, onRemove }) {
         <button onClick={fetchTours}>Refresh</button>
       </div>
     );
-
   return (
     <section>
       {tours.map((tour) => (
